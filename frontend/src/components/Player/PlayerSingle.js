@@ -7,3 +7,5 @@ const PlayerSingle = () => {
         </div>
     );
 }
+
+export default PlayerSingle;

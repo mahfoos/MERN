@@ -1,6 +1,6 @@
 import React from "react";
 
-class Player extends Component {
+class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -9,3 +9,6 @@ class Player extends Component {
     return <div> Player Form</div>;
   }
 }
+
+
+export default Player;
