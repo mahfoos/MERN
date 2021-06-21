@@ -32,6 +32,27 @@ const getPlayerWithID = (req, res) => {
     })
 }
 
+const updatePlayer = (req, res) => {
+    Player.findOneAndUpdate({_id: req.params.PlayerId},req.body,{new: true}, (err, Player) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(Player);
+    })
+}
+
+const deletePlayer = (req, res) => {
+    Player.remove({_id: req.params.PlayerId}, (err, Player) => {
+        if (err){
+            res.send(err);
+        }
+        res.json({message : 'Successfully deleted player'});
+    })
+}
+
+
 module.exports = addNewPlayer;
 module.exports = getPlayers;
 module.exports = getPlayerWithID;
+module.exports = updatePlayer;
+module.exports = deletePlayer;
